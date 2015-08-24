@@ -1,0 +1,13 @@
+/**
+ * Main CSS file
+ */
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/placeholders';
+
+@import 'layout/main';
+
+@importa 'pages/index';
+@importa 'pages/about';
+@importa 'pages/directions';
