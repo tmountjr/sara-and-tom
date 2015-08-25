@@ -16,11 +16,18 @@
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 	</head>
 	<body>
-		<div id="content">
-			<div id="nav">
-				<ul>
-					<li {{#if page1}}class="active"{{/if}}><a href="{{pageOne.url}}">{{pageOne.pageName}}</a></li>
-					<li {{#if page2}}class="active"{{/if}}><a href="{{pageTwo.url}}">{{pageTwo.pageName}}</a></li>
-					<li {{#if page3}}class="active"{{/if}}><a href="{{pageThree.url}}">{{pageThree.pageName}}</a></li>
+		<header>
+			<nav role="navigation" class="pure-menu pure-menu-horizontal">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item {{#if page1}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageOne.url}}">{{pageOne.pageName}}</a></li>
+					<li class="pure-menu-item {{#if page2}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageTwo.url}}">{{pageTwo.pageName}}</a></li>
+					<li class="pure-menu-item {{#if page3}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageThree.url}}">{{pageThree.pageName}}</a></li>
 				</ul>
+			</nav>
+			<div id="banner">
+				<h1>Sara + Tom</h1>
+				<h2>Wednesday, Dec. 30, 2015</h2>
+				<h2>Wilmington, DE</h2>
 			</div>
+		</header>
+		<main id="content" role="main">

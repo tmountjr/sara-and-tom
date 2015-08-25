@@ -6,8 +6,13 @@
 @import 'helpers/mixins';
 @import 'helpers/placeholders';
 
+@import 'helpers/color1';
+
+@import 'helpers/type';
+
 @import 'layout/main';
 
-@importa 'pages/index';
-@importa 'pages/about';
-@importa 'pages/directions';
+@import 'pages/index';
+@import 'pages/about';
+@import 'pages/directions';
+@import 'pages/swatches';

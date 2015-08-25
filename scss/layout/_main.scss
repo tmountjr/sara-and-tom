@@ -68,6 +68,33 @@ textarea {
 }
 
 /* ==========================================================================
+   Author Styles
+   ========================================================================== */
+
+html {
+	background-color: $color-primary-1;
+	color: rgba(32,32,32,1);
+}
+
+nav {
+	background-color: $color-secondary-1-0;
+	height: 46px;
+	line-height: 30px;
+}
+
+#banner {
+	text-align: center;
+}
+
+.pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
+	background-color: $color-secondary-1-2;
+}
+
+.pure-menu-link {
+	color: $color-primary-1;
+}
+
+/* ==========================================================================
    Helper classes
    ========================================================================== */
 
