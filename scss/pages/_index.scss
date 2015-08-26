@@ -1,0 +1,25 @@
+h1 {
+	font-size: 5em;
+}
+
+.slide {
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.content-box {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+
+	#home & { margin-top: -20%; }
+	#about & { margin-top: -20%; }
+	#directions & { margin-top: -20%; }
+}
+
+#home { background-color: $color-primary-1; }
+#about { background-color: $color-secondary-1-1; }
+#directions { background-color: $color-secondary-2-1; }

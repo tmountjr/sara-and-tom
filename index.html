@@ -21,15 +21,39 @@
 		<header>
 			<nav role="navigation" class="pure-menu pure-menu-horizontal">
 				<ul class="pure-menu-list">
-					<li class="pure-menu-item {{#if page1}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageOne.url}}">{{pageOne.pageName}}</a></li>
-					<li class="pure-menu-item {{#if page2}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageTwo.url}}">{{pageTwo.pageName}}</a></li>
-					<li class="pure-menu-item {{#if page3}}pure-menu-selected{{/if}}"><a class="pure-menu-link" href="{{pageThree.url}}">{{pageThree.pageName}}</a></li>
+					<li class="pure-menu-item pure-menu-selected"><a class="pure-menu-link" href="#home">Home</a></li>
+					<li class="pure-menu-item"><a class="pure-menu-link" href="#about">About Us</a></li>
+					<li class="pure-menu-item"><a class="pure-menu-link" href="#directions">Directions</a></li>
 				</ul>
 			</nav>
-			<div id="banner">
-				<h1>Sara + Tom</h1>
-				<h2>Wednesday, Dec. 30, 2015</h2>
-				<h2>Wilmington, DE</h2>
-			</div>
 		</header>
 		<main id="content" role="main">
+
+			<article id="home" class="slide">
+				<div class="content-box">
+					<h1>Sara + Tom</h1>
+					<h2>Wednesday, Dec. 30, 2015</h2>
+					<h2>Wilmington, DE</h2>
+				</div>
+			</article>
+
+			<article id="about" class="slide">
+				<div class="content-box">
+					<p>foo</p>
+				</div>
+			</article>
+
+			<article id="directions" class="slide">
+				<div class="content-box">
+					<p>bar</p>
+				</div>
+			</article>
+			
+		</main>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</body>
+</html>

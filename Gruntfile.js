@@ -7,14 +7,10 @@ module.exports = function(grunt) {
 
 		config: {
 			path: {
-				ms: 'metalsmith',
-				src: '<%=config.path.ms %>/src',
-				css: '<%= config.path.src %>/css',
-				js: '<%= config.path.src %>/js',
-				partials: '<%= config.path.ms %>/partials',
-				layouts: '<%= config.path.ms %>/layouts',
-				build: 'build',
+				css: 'css',
+				js: 'js',
 				scss: 'scss',
+				img: 'img',
 				copyDest: 'tmountjr.github.io'
 			}
 		},
@@ -30,42 +26,10 @@ module.exports = function(grunt) {
 			}
 		},
 
-		metalsmith: {
-			dist: {
-				options: {
-					metadata: {
-						pageOne: {
-							pageName: 'Main Page',
-							url: 'index.html'
-						},
-						pageTwo: {
-							pageName: 'About Us',
-							url: 'about.html'
-						},
-						pageThree: {
-							pageName: 'Directions',
-							url: 'directions.html'
-						}
-					},
-					plugins: {
-						'metalsmith-layouts': {
-							engine: 'handlebars',
-							pattern: '*.html',
-							partials: '<%= config.path.partials %>',
-							directory: '<%= config.path.layouts %>',
-							default: 'main.html'
-						}
-					}
-				},
-				src: '<%= config.path.src %>',
-				dest: '<%= config.path.build %>'
-			}
-		},
-
 		copy: {
 			dist: {
 				files: [
-					{expand: true, cwd: '<%= config.path.build %>', src: '**', dest: '<%= config.path.copyDest %>'}
+					{expand: true, src: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'], dest: '<%= config.path.copyDest %>'}
 				],
 			}
 		},
@@ -78,9 +42,9 @@ module.exports = function(grunt) {
 				files: '<%= config.path.scss %>/**/*.scss',
 				tasks: 'sass'
 			},
-			metalsmith: {
-				files: '<%= config.path.ms %>/**/*.*',
-				tasks: ['metalsmith', 'copy']
+			dist: {
+				files: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
+				tasks: 'copy'
 			}
 		}
 
@@ -88,7 +52,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('build', [
 		'sass',
-		'metalsmith',
 		'copy'
 	]);
 
