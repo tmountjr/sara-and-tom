@@ -2,3 +2,4 @@ node_modules/
 .sass-cache/
 css/main.css
 css/main.css.map
+.DS_Store
