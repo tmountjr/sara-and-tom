@@ -12,6 +12,10 @@ var tool = tool || {};
 			$.scrollTo($(this).attr('href'), 750, 'swing');
 		});
 
+		$("footer").click(function() {
+			// find which article we're currently on and advance to the next
+		});
+
 	}();
 
 })(jQuery);
