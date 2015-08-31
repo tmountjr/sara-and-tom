@@ -26,10 +26,23 @@ h1 {
 	}
 
 	#home & { top: 70px; }
-	#about & { margin-top: -20%; }
-	#directions & { margin-top: -20%; }
+	#about & { top: 70px; }
+	#directions & { top: 70px; }
+	#registry & { top: 70px; }
+
+	.img-carousel {
+		width: 80%;
+		margin: 0 auto;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
 }
 
 #home { background-color: $color-primary-1; }
 #about { background-color: $color-secondary-1-1; }
 #directions { background-color: $color-secondary-2-1; }
+#registry { background-color: $color-complement-1; }

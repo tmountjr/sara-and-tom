@@ -41,11 +41,11 @@ module.exports = function(grunt) {
 			}
 		},
 
-		clean: [
-			'<%= config.path.destCss %>',
-			'<%= config.path.destJs %>',
-			'<%= config.path.destImg %>'
-		],
+		clean: {
+			css: ['<%= config.path.destCss %>'],
+			js: ['<%= config.path.destJs %>'],
+			img: ['<%= config.path.destImg %>'],
+		},
 
 		copy: {
 			dist: {
@@ -61,11 +61,11 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: '<%= config.path.scss %>/**/*.scss',
-				tasks: 'sass'
+				tasks: ['sass', 'clean:css', 'copy']
 			},
 			images: {
 				files: '<%= config.path.imgSrc %>',
-				tasks: 'newer:imagemin'
+				tasks: ['newer:imagemin', 'clean:img']
 			},
 			dist: {
 				files: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
