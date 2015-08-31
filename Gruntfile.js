@@ -11,7 +11,11 @@ module.exports = function(grunt) {
 				js: 'js',
 				scss: 'scss',
 				img: 'img',
-				copyDest: 'tmountjr.github.io'
+				imgSrc: 'img-src',
+				copyDest: 'tmountjr.github.io',
+				destCss: '<%= config.path.copyDest %>/css',
+				destJs: '<%= config.path.copyDest %>/js',
+				destImg: '<%= config.path.copyDest %>/img',
 			}
 		},
 
@@ -25,6 +29,23 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
+		imagemin: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '<%= config.path.imgSrc %>/',
+					src: ['**/*.png'],
+					dest: '<%= config.path.img %>'
+				}]
+			}
+		},
+
+		clean: [
+			'<%= config.path.destCss %>',
+			'<%= config.path.destJs %>',
+			'<%= config.path.destImg %>'
+		],
 
 		copy: {
 			dist: {
@@ -42,9 +63,13 @@ module.exports = function(grunt) {
 				files: '<%= config.path.scss %>/**/*.scss',
 				tasks: 'sass'
 			},
+			images: {
+				files: '<%= config.path.imgSrc %>',
+				tasks: 'newer:imagemin'
+			},
 			dist: {
 				files: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
-				tasks: 'copy'
+				tasks: ['clean', 'copy']
 			}
 		}
 
@@ -52,6 +77,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('build', [
 		'sass',
+		'imagemin',
+		'clean',
 		'copy'
 	]);
 
