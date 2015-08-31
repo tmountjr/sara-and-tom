@@ -16,12 +16,12 @@ h1 {
 	top: 50%;
 
 	img {
-		width: 80%;
+		width: 50%;
 		padding: 5px;
 		border: 2px solid $color-secondary-1-4;
 
 		@media (min-width: 1280px) {
-			width: 1024px;
+			width: 640px;
 		}
 	}
 
