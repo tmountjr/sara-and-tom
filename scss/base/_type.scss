@@ -2,13 +2,11 @@
  * Typography
  */
 
-%GreatVibes {
-	font-family: 'Great Vibes', arial, sans-serif;
-}
-
-%Montserrat {
-	font-family: "Montserrat",arial,sans-serif;
-}
+%GreatVibes { font-family: 'Great Vibes', arial, sans-serif; }
+%Montserrat { font-family: "Montserrat", arial, sans-serif; }
+%PoiretOne { font-family: "Poiret One", cursive; }
+%JosefinSans { font-family: 'Josefin Sans', sans-serif; }
+%JuliusSansOne { font-family: 'Julius Sans One', sans-serif; }
 
 %h1 {
 	@extend %GreatVibes;
@@ -16,10 +14,16 @@
 
 %h2 {
 	font-weight: bold;
+	font-size: 2em;
 }
 
 html {
-	@extend %Montserrat;
+	// @extend %Montserrat;
+	@extend %JosefinSans;
+}
+
+nav {
+	@extend %JuliusSansOne;
 }
 
 h1 { @extend %h1; }
