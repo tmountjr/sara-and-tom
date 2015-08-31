@@ -6,9 +6,10 @@
 @import 'helpers/mixins';
 @import 'helpers/placeholders';
 
-@import 'helpers/color1';
+@import "colors/turquoise";
+// @import "colors/light_teal";
 
-@import 'helpers/type';
+@import 'base/type';
 
 @import 'layout/main';
 
