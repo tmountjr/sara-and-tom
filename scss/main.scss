@@ -2,12 +2,12 @@
  * Main CSS file
  */
 
+ @import "colors/turquoise";
+ // @import "colors/light_teal";
+
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/placeholders';
-
-@import "colors/turquoise";
-// @import "colors/light_teal";
 
 @import 'base/type';
 

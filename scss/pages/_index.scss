@@ -16,28 +16,100 @@ h1 {
 	top: 50%;
 
 	img {
-		width: 50%;
-		padding: 5px;
-		border: 2px solid $color-secondary-1-4;
+		width: 392px;
+		@extend %image-border;
+
+		@media (min-width: 800px) {
+			width: 50%;
+		}
 
 		@media (min-width: 1280px) {
 			width: 640px;
 		}
 	}
 
+	h3, h4 {
+		margin: 0;
+	}
+
 	#home & { top: 70px; }
-	#about & { top: 70px; }
-	#directions & { top: 70px; }
-	#registry & { top: 70px; }
+	#about & { top: 50px; }
+	#directions & { top: 200px; }
+	#registry & { top: 200px; }
 
 	.img-carousel {
-		width: 80%;
-		margin: 0 auto;
+		width: 300px;
+		height: 320px;
+		margin: 20px auto 10px;
+		@extend %image-border;
 
 		ul {
 			list-style: none;
 			padding: 0;
 			margin: 0;
+			height: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
+			-webkit-overflow-scrolling: touch;
+
+			li {
+				height: 100%;
+				width: 300px;
+				display:inline-block;
+				@include box-sizing(border-box);
+
+				text-indent: -9999px;
+
+				&#photo-1 { background: url('/img/1.jpg') no-repeat top left; }
+				&#photo-2 { background: url('/img/2.jpg') no-repeat top left; }
+				&#photo-3 { background: url('/img/3.jpg') no-repeat top left; }
+				&#photo-4 { background: url('/img/4.jpg') no-repeat top left; }
+				&#photo-5 { background: url('/img/5.gif') no-repeat top left; }
+			}
+		}
+	}
+
+	.photo-content {
+		display: none;
+		width: 90%;
+		margin: 0 auto;
+		@include box-sizing(border-box);
+
+		p {
+			font-size: 1.25em;
+		}
+	}
+
+	@media (min-width: 800px) {
+		.img-carousel, .photo-content {
+			width: 605px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.img-carousel, .photo-content {
+			width: 908px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.img-carousel, .photo-content {
+			width: 1212px;
+		}
+	}
+
+	@media (min-width: 1600px) {
+		.img-carousel, .photo-content {
+			width: 1516px;
+		}
+
+		.img-carousel {
+			height: 300px;
+
+			ul {
+				overflow: visible;
+			}
 		}
 	}
 }

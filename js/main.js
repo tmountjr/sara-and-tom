@@ -16,6 +16,21 @@ var tool = tool || {};
 			// find which article we're currently on and advance to the next
 		});
 
+		$("li.carousel-photo").hoverIntent({
+			over: function() {
+				var toShow = $(this).data('content');
+				$(".photo-content").promise().done(function() {
+					$(toShow).fadeIn();
+				});
+			},
+			out: function() {
+				$(".photo-content").promise().done(function() {
+					$(".photo-content").fadeOut();
+				});
+			},
+			interval: 250
+		});
+
 	}();
 
 })(jQuery);

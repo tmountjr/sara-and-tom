@@ -3,7 +3,6 @@
  */
 
 %GreatVibes { font-family: 'Great Vibes', arial, sans-serif; }
-%Montserrat { font-family: "Montserrat", arial, sans-serif; }
 %PoiretOne { font-family: "Poiret One", cursive; }
 %JosefinSans { font-family: 'Josefin Sans', sans-serif; }
 %JuliusSansOne { font-family: 'Julius Sans One', sans-serif; }
@@ -23,6 +22,12 @@
 	font-size: 4em;
 }
 
+%h4 {
+	@extend %PoiretOne;
+	font-style: italic;
+	font-size: 2em;
+}
+
 html {
 	// @extend %Montserrat;
 	@extend %JosefinSans;
@@ -35,3 +40,4 @@ nav {
 h1 { @extend %h1; }
 h2 { @extend %h2; }
 h3 { @extend %h3; }
+h4 { @extend %h4; }
