@@ -89,7 +89,6 @@ header {
 
 nav,
 footer {
-	height: 46px;
 	line-height: 30px;
 	opacity: 0.7;
 }
@@ -135,6 +134,10 @@ footer {
 
 .pure-menu-link {
 	color: $color-primary-1;
+}
+
+.pure-menu-horizontal.pure-menu-scrollable {
+	padding: 0;
 }
 
 /* ==========================================================================
