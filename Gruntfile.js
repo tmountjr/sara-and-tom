@@ -45,6 +45,7 @@ module.exports = function(grunt) {
 			css: ['<%= config.path.destCss %>'],
 			js: ['<%= config.path.destJs %>'],
 			img: ['<%= config.path.destImg %>'],
+			html: ['<%= config.path.copyDest %>/**/*.html']
 		},
 
 		copy: {
@@ -62,10 +63,17 @@ module.exports = function(grunt) {
 					dest: '<%= config.path.copyDest %>'
 				}]
 			},
-			other: {
+			js: {
+				files: [{
+					expand: true,
+					src: ['<%= config.path.js %>/**'],
+					dest: '<%= config.path.copyDest %>'
+				}]
+			},
+			html: {
 				files: [{
 					expand: true, 
-					src: ['<%= config.path.js %>/**', '*.html'], 
+					src: ['*.html'], 
 					dest: '<%= config.path.copyDest %>'
 				}]
 			}
@@ -83,9 +91,13 @@ module.exports = function(grunt) {
 				files: '<%= config.path.imgSrc %>',
 				tasks: ['newer:imagemin', 'clean:img', 'copy:img']
 			},
-			other: {
-				files: ['<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
-				tasks: ['clean', 'copy:other']
+			js: {
+				files: '<%= config.path.js %>',
+				tasks: ['clean:js', 'copy:js']
+			},
+			html: {
+				files: ['**/*.html'],
+				tasks: ['clean:html', 'copy:html']
 			}
 		}
 
