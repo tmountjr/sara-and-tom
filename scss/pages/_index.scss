@@ -1,25 +1,20 @@
-h1 {
-	font-size: 5em;
-}
-
 .slide {
-	height: 100%;
-	position: relative;
 	margin: 0;
 	padding: 0;
 }
 
 .content-box {
-	position: absolute;
 	width: 100%;
 	text-align: center;
-	top: 50%;
+	position: relative;
+	padding-bottom: 1.5em;
 
 	img {
-		width: 392px;
+		width: 80%;
+
 		@extend %image-border;
 
-		@media (min-width: 800px) {
+		@media (min-width: 568px) {
 			width: 50%;
 		}
 
@@ -32,15 +27,20 @@ h1 {
 		margin: 0;
 	}
 
-	#home & { top: 70px; }
-	#about & { top: 50px; }
-	#directions & { top: 200px; }
-	#registry & { top: 200px; }
+	#home & { padding-top: 70px; }
+	#about & { padding-top: 50px; }
+	#directions & { padding-top: 70px; }
+	#registry & { padding-top: 70px; }
+
+	#about-action-large {
+		display:none;
+	}
 
 	.img-carousel {
-		width: 300px;
-		height: 320px;
+		width: 150px;
+		height: 150px;
 		margin: 20px auto 10px;
+		
 		@extend %image-border;
 
 		ul {
@@ -55,17 +55,32 @@ h1 {
 
 			li {
 				height: 100%;
-				width: 300px;
+				width: 150px;
 				display:inline-block;
 				@include box-sizing(border-box);
 
 				text-indent: -9999px;
 
-				&#photo-1 { background: url('/img/1.jpg') no-repeat top left; }
-				&#photo-2 { background: url('/img/2.jpg') no-repeat top left; }
-				&#photo-3 { background: url('/img/3.jpg') no-repeat top left; }
-				&#photo-4 { background: url('/img/4.jpg') no-repeat top left; }
-				&#photo-5 { background: url('/img/5.gif') no-repeat top left; }
+				&#photo-1 {
+					background: url('/img/1.jpg') no-repeat top left;
+					background-size: cover;
+				}
+				&#photo-2 {
+					background: url('/img/2.jpg') no-repeat top left;
+					background-size: cover;
+				}
+				&#photo-3 {
+					background: url('/img/3.jpg') no-repeat top left;
+					background-size: cover;
+				}
+				&#photo-4 {
+					background: url('/img/4.jpg') no-repeat top left;
+					background-size: cover;
+				}
+				&#photo-5 {
+					background: url('/img/5.gif') no-repeat top left;
+					background-size: cover;
+				}
 			}
 		}
 	}
@@ -81,15 +96,35 @@ h1 {
 		}
 	}
 
+	@media (min-width: 568px) {
+		.img-carousel {
+			width: 304px;
+		}
+	}
+
 	@media (min-width: 800px) {
 		.img-carousel, .photo-content {
 			width: 605px;
+		}
+
+		.img-carousel {
+			height: 320px;
+
+			ul {
+				li {
+					width: 300px;
+				}
+			}
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.img-carousel, .photo-content {
 			width: 908px;
+		}
+
+		.about-nav-top {
+			display: none;
 		}
 	}
 
@@ -118,3 +153,24 @@ h1 {
 #about { background-color: $color-secondary-1-1; }
 #directions { background-color: $color-secondary-2-1; }
 #registry { background-color: $color-complement-1; }
+
+@media (min-width: 1024px) {
+
+	h1 { font-size: 5em; }
+	h2 { font-size: 2em; }
+	h3 { font-size: 4em; }
+	h4 { font-size: 2em; }
+
+	.slide {
+		height: 100%;
+		position: relative;
+	}
+
+	#about-action-large {
+		display: inline;
+	}
+
+	#about-action-small {
+		display: none;
+	}
+}

@@ -9,23 +9,24 @@
 
 %h1 {
 	@extend %GreatVibes;
+	font-size: 3em;
 }
 
 %h2 {
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 1.75em;
 }
 
 %h3 {
 	@extend %JuliusSansOne;
 	font-weight: bold;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 %h4 {
 	@extend %PoiretOne;
 	font-style: italic;
-	font-size: 2em;
+	font-size: 1.25em;
 }
 
 html {
