@@ -48,10 +48,26 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			dist: {
-				files: [
-					{expand: true, src: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'], dest: '<%= config.path.copyDest %>'}
-				],
+			css: {
+				files: [{
+					expand: true, 
+					src: ['<%= config.path.css %>/**'], 
+					dest: '<%= config.path.copyDest %>'
+				}]
+			},
+			img: {
+				files: [{
+					expand: true,
+					src: ['<%= config.path.img %>/**'],
+					dest: '<%= config.path.copyDest %>'
+				}]
+			},
+			other: {
+				files: [{
+					expand: true, 
+					src: ['<%= config.path.js %>/**', '*.html'], 
+					dest: '<%= config.path.copyDest %>'
+				}]
 			}
 		},
 
@@ -61,15 +77,15 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: '<%= config.path.scss %>/**/*.scss',
-				tasks: ['sass', 'clean:css', 'copy']
+				tasks: ['sass', 'clean:css', 'copy:css']
 			},
 			images: {
 				files: '<%= config.path.imgSrc %>',
-				tasks: ['newer:imagemin', 'clean:img']
+				tasks: ['newer:imagemin', 'clean:img', 'copy:img']
 			},
-			dist: {
-				files: ['<%= config.path.css %>/**', '<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
-				tasks: ['clean', 'copy']
+			other: {
+				files: ['<%= config.path.js %>/**', '<%= config.path.img %>/**', '*.html'],
+				tasks: ['clean', 'copy:other']
 			}
 		}
 
