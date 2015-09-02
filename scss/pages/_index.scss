@@ -1,6 +1,11 @@
 .slide {
 	margin: 0;
 	padding: 0;
+
+	@media (min-width: 1024px) {
+		height: 100%;
+		position: relative;
+	}
 }
 
 .content-box {
@@ -126,6 +131,14 @@
 		.about-nav-top {
 			display: none;
 		}
+
+		#about-action-large {
+			display: inline;
+		}
+
+		#about-action-small {
+			display: none;
+		}
 	}
 
 	@media (min-width: 1440px) {
@@ -153,24 +166,3 @@
 #about { background-color: $color-secondary-1-1; }
 #directions { background-color: $color-secondary-2-1; }
 #registry { background-color: $color-complement-1; }
-
-@media (min-width: 1024px) {
-
-	h1 { font-size: 5em; }
-	h2 { font-size: 2em; }
-	h3 { font-size: 4em; }
-	h4 { font-size: 2em; }
-
-	.slide {
-		height: 100%;
-		position: relative;
-	}
-
-	#about-action-large {
-		display: inline;
-	}
-
-	#about-action-small {
-		display: none;
-	}
-}

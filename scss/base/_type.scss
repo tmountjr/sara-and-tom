@@ -10,23 +10,35 @@
 %h1 {
 	@extend %GreatVibes;
 	font-size: 3em;
+	@media (min-width: 1024px) {
+		font-size: 5em;
+	}
 }
 
 %h2 {
 	font-weight: bold;
 	font-size: 1.75em;
+	@media (min-width: 1024px) {
+		font-size: 2em;
+	}
 }
 
 %h3 {
 	@extend %JuliusSansOne;
 	font-weight: bold;
 	font-size: 3em;
+	@media (min-width: 1024px) {
+		font-size: 4em;
+	}
 }
 
 %h4 {
 	@extend %PoiretOne;
 	font-style: italic;
 	font-size: 1.25em;
+	@media (min-width: 1024px) {
+		font-size: 2em;
+	}
 }
 
 html {
