@@ -32,21 +32,33 @@
 }
 
 #hotels {
-	background-color: $color-complement-1;
+	@include gradient($color-complement-1, $color-primary-1);
 
-	img {
-		margin: 0 auto;
-		width: 50%;
-	}
+	#hotels-wrapper {
+		padding-bottom: 1.5em;
+		
+		img {
+			margin: 0 auto;
+			width: 75%;
 
-	.hotel-details {
-		margin: 10px 0;
+			@media (min-width: 568px) {
+				width: 50%;
+			}
+		}
 
-		p {
-			font-size: 1em;
-			margin: 0;
+		.hotel-details {
+			margin: 10px 0;
+
+			p {
+				font-size: 1em;
+				margin: 0;
+			}
 		}
 	}
+}
+
+#registry {
+	background-color: $color-primary-1;
 }
 
 .slide {
