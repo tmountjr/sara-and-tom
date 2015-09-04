@@ -1,9 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
-	color: #222;
-	font-size: 1em;
-	line-height: 1.4;
+	@extend %standardType;
 }
 
 ::-moz-selection {
@@ -73,7 +71,6 @@ textarea {
 
 html {
 	background-color: #cdcdcd;
-	color: rgba(32,32,32,1);
 }
 
 html,

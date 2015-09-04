@@ -1,3 +1,37 @@
+#home {
+	background-color: $color-primary-1;
+}
+
+#about {
+	background-color: $color-secondary-1-1;
+}
+
+#directions {
+	background-color: $color-secondary-2-1;
+	
+	#directions-map {
+		height: 200px;
+
+		#place-info {
+			text-align: left;
+		}
+
+		@media (min-width: 800px) {
+			height: 400px;
+		}
+	}
+
+	#directions-wrapper {
+		width: 75%;
+		margin: 0 auto;
+		padding: 10px 0;
+	}
+}
+
+#registry {
+	background-color: $color-complement-1;
+}
+
 .slide {
 	margin: 0;
 	padding: 0;
@@ -161,8 +195,3 @@
 		}
 	}
 }
-
-#home { background-color: $color-primary-1; }
-#about { background-color: $color-secondary-1-1; }
-#directions { background-color: $color-secondary-2-1; }
-#registry { background-color: $color-complement-1; }

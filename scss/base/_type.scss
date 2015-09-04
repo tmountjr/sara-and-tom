@@ -7,6 +7,12 @@
 %JosefinSans { font-family: 'Josefin Sans', sans-serif; }
 %JuliusSansOne { font-family: 'Julius Sans One', sans-serif; }
 
+%standardType {
+	color: #222;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
 %h1 {
 	@extend %GreatVibes;
 	font-size: 3em;
@@ -41,7 +47,7 @@
 	}
 }
 
-html {
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 	// @extend %Montserrat;
 	@extend %JosefinSans;
 }
@@ -54,3 +60,11 @@ h1 { @extend %h1; }
 h2 { @extend %h2; }
 h3 { @extend %h3; }
 h4 { @extend %h4; }
+
+a {
+	color: $color-link;
+
+	&:hover {
+		cursor: pointer;
+	}
+}

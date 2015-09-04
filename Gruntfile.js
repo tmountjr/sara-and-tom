@@ -92,11 +92,11 @@ module.exports = function(grunt) {
 				tasks: ['newer:imagemin', 'clean:img', 'copy:img']
 			},
 			js: {
-				files: '<%= config.path.js %>',
+				files: '<%= config.path.js %>/**/*.js',
 				tasks: ['clean:js', 'copy:js']
 			},
 			html: {
-				files: ['**/*.html', '!<%= config.path.copyDest %>'],
+				files: ['index.html'],
 				tasks: ['clean:html', 'copy:html']
 			}
 		}
