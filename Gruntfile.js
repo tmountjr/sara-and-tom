@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 				tasks: ['clean:js', 'copy:js']
 			},
 			html: {
-				files: ['**/*.html'],
+				files: ['**/*.html', '!<%= config.path.copyDest %>'],
 				tasks: ['clean:html', 'copy:html']
 			}
 		}
