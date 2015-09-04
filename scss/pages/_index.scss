@@ -10,7 +10,6 @@
 	@include gradient($color-secondary-2-1, $color-complement-1);
 
 	#directions-wrapper {
-		font-size: 1.25em;
 
 		#directions-map {
 			height: 200px;
@@ -21,7 +20,9 @@
 		}
 
 		@media (min-width: 800px) {
-			font-size: 1em;
+			p {
+				font-size: 1em;
+			}
 
 			#directions-map {
 				height: 400px;
@@ -32,6 +33,20 @@
 
 #hotels {
 	background-color: $color-complement-1;
+
+	img {
+		margin: 0 auto;
+		width: 50%;
+	}
+
+	.hotel-details {
+		margin: 10px 0;
+
+		p {
+			font-size: 1em;
+			margin: 0;
+		}
+	}
 }
 
 .slide {
@@ -51,7 +66,7 @@
 	padding-top: 70px;
 	padding-bottom: 1.5em;
 
-	img {
+	#hero-img {
 		width: 80%;
 
 		@extend %image-border;
@@ -129,10 +144,6 @@
 		padding-bottom: 1.5em;
 
 		@include box-sizing(border-box);
-
-		p {
-			font-size: 1.25em;
-		}
 	}
 
 	.content-wrapper {

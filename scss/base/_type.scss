@@ -47,6 +47,14 @@
 	}
 }
 
+%h5 {
+	font-size: 1.25em;
+}
+
+%p {
+	font-size: 1.25em;
+}
+
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 	// @extend %Montserrat;
 	@extend %JosefinSans;
@@ -60,6 +68,7 @@ h1 { @extend %h1; }
 h2 { @extend %h2; }
 h3 { @extend %h3; }
 h4 { @extend %h4; }
+h5 { @extend %h5; }
 
 a {
 	color: $color-link;
@@ -67,4 +76,8 @@ a {
 	&:hover {
 		cursor: pointer;
 	}
+}
+
+p {
+	@extend %p;
 }
