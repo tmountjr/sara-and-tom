@@ -1,18 +1,15 @@
 #home {
-	background-color: $color-primary-1;
+	@include gradient($color-primary-1, $color-secondary-1-1);
 }
 
 #about {
-	background-color: $color-secondary-1-1;
+	@include gradient($color-secondary-1-1, $color-secondary-2-1);
 }
 
 #directions {
-	background-color: $color-secondary-2-1;
+	@include gradient($color-secondary-2-1, $color-complement-1);
 
 	#directions-wrapper {
-		width: 75%;
-		margin: 0 auto;
-		padding: 10px 0;
 		font-size: 1.25em;
 
 		#directions-map {
@@ -21,15 +18,19 @@
 			#place-info {
 				text-align: left;
 			}
+		}
 
-			@media (min-width: 800px) {
+		@media (min-width: 800px) {
+			font-size: 1em;
+
+			#directions-map {
 				height: 400px;
 			}
 		}
 	}
 }
 
-#registry {
+#hotels {
 	background-color: $color-complement-1;
 }
 
@@ -47,6 +48,7 @@
 	width: 100%;
 	text-align: center;
 	position: relative;
+	padding-top: 70px;
 	padding-bottom: 1.5em;
 
 	img {
@@ -66,11 +68,6 @@
 	h3, h4 {
 		margin: 0;
 	}
-
-	#home & { padding-top: 70px; }
-	#about & { padding-top: 50px; }
-	#directions & { padding-top: 70px; }
-	#registry & { padding-top: 70px; }
 
 	#about-action-large {
 		display:none;
@@ -129,11 +126,19 @@
 		display: none;
 		width: 90%;
 		margin: 0 auto;
+		padding-bottom: 1.5em;
+
 		@include box-sizing(border-box);
 
 		p {
 			font-size: 1.25em;
 		}
+	}
+
+	.content-wrapper {
+		width: 75%;
+		margin: 0 auto;
+		padding: 10px 0;
 	}
 
 	@media (min-width: 568px) {
@@ -145,6 +150,10 @@
 	@media (min-width: 800px) {
 		.img-carousel, .photo-content {
 			width: 605px;
+		}
+
+		.photo-content {
+			padding-bottom: 0;
 		}
 
 		.img-carousel {

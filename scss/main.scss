@@ -2,8 +2,10 @@
  * Main CSS file
  */
 
- @import "colors/turquoise";
- // @import "colors/light_teal";
+@import "colors/turquoise";
+// @import "colors/light_teal";
+
+@import "colors/gradient";
 
 @import 'helpers/variables';
 @import 'helpers/mixins';
