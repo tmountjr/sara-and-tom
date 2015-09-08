@@ -1,13 +1,13 @@
 #home {
-	@include gradient($color-primary-1, $color-secondary-1-1);
+	@include gradient($color-primary-1, $color-primary-2);
 }
 
 #about {
-	@include gradient($color-secondary-1-1, $color-secondary-2-1);
+	@include gradient($color-primary-2, $color-primary-1);
 }
 
 #directions {
-	@include gradient($color-secondary-2-1, $color-complement-1);
+	@include gradient($color-primary-1, $color-primary-2);
 
 	#directions-wrapper {
 
@@ -32,7 +32,7 @@
 }
 
 #hotels {
-	@include gradient($color-complement-1, $color-primary-1);
+	@include gradient($color-primary-2, $color-primary-1);
 
 	#hotels-wrapper {
 		padding-bottom: 1.5em;
@@ -59,6 +59,30 @@
 
 #registry {
 	background-color: $color-primary-1;
+
+	#registry-wrapper {
+		margin-top: 50px;
+	}
+
+	a.icon {
+		@include sprite($bbb-grey-sm);
+
+		display: block;
+		margin: 0 auto;
+		text-indent: -9999px;
+
+		&:hover {
+			@include sprite($bbb-color-sm);
+		}
+
+		@media (min-width: 768px) {
+			@include sprite($bbb-grey);
+
+			&:hover {
+				@include sprite($bbb-color);
+			}
+		}
+	}
 }
 
 .slide {

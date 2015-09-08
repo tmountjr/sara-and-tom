@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 				scss: 'scss',
 				img: 'img',
 				imgSrc: 'img-src',
+				spriteSrc: 'sprite-src',
 				copyDest: 'tmountjr.github.io',
 				destCss: '<%= config.path.copyDest %>/css',
 				destJs: '<%= config.path.copyDest %>/js',
@@ -27,6 +28,14 @@ module.exports = function(grunt) {
 				files: {
 					'<%= config.path.css %>/main.css': '<%= config.path.scss %>/main.scss'
 				}
+			}
+		},
+
+		sprite: {
+			dist: {
+				src: '<%= config.path.spriteSrc %>/*.png',
+				dest: '<%= config.path.img %>/sprites.png',
+				destCss: '<%= config.path.scss %>/layout/_sprites.scss'
 			}
 		},
 
@@ -87,6 +96,10 @@ module.exports = function(grunt) {
 				files: '<%= config.path.scss %>/**/*.scss',
 				tasks: ['sass', 'clean:css', 'copy:css']
 			},
+			spite: {
+				files: '<%= config.path.spriteSrc %>/*.*',
+				tasks: ['sprite', 'clean:css', 'clean:img', 'copy:css', 'copy:img']
+			},
 			images: {
 				files: '<%= config.path.imgSrc %>',
 				tasks: ['newer:imagemin', 'clean:img', 'copy:img']
@@ -104,6 +117,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('build', [
+		'sprite',
 		'sass',
 		'imagemin',
 		'clean',
