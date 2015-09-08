@@ -65,15 +65,11 @@
 	}
 
 	a.icon {
-		@include sprite($bbb-grey-sm);
+		@include sprite($bbb-color-sm);
 
 		display: block;
 		margin: 0 auto;
 		text-indent: -9999px;
-
-		&:hover {
-			@include sprite($bbb-color-sm);
-		}
 
 		@media (min-width: 768px) {
 			@include sprite($bbb-grey);
@@ -124,7 +120,7 @@
 		margin: 0;
 	}
 
-	#about-action-large {
+	.action-large {
 		display:none;
 	}
 
@@ -214,11 +210,11 @@
 			width: 908px;
 		}
 
-		#about-action-large {
+		.action-large {
 			display: inline;
 		}
 
-		#about-action-small {
+		.action-small {
 			display: none;
 		}
 	}
