@@ -154,23 +154,28 @@
 				text-indent: -9999px;
 
 				&#photo-1 {
-					background: url('/img/1.jpg') no-repeat top left;
+					// background: url('/img/1.png') no-repeat top left;
+					@include sprite($about1);
 					background-size: cover;
 				}
 				&#photo-2 {
-					background: url('/img/2.jpg') no-repeat top left;
+					// background: url('/img/2.png') no-repeat top left;
+					@include sprite($about2);
 					background-size: cover;
 				}
 				&#photo-3 {
-					background: url('/img/3.jpg') no-repeat top left;
+					// background: url('/img/3.png') no-repeat top left;
+					@include sprite($about3);
 					background-size: cover;
 				}
 				&#photo-4 {
-					background: url('/img/4.jpg') no-repeat top left;
+					// background: url('/img/4.png') no-repeat top left;
+					@include sprite($about4);
 					background-size: cover;
 				}
 				&#photo-5 {
-					background: url('/img/5.gif') no-repeat top left;
+					// background: url('/img/5.png') no-repeat top left;
+					@include sprite($about5);
 					background-size: cover;
 				}
 			}
