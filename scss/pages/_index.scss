@@ -153,31 +153,11 @@
 
 				text-indent: -9999px;
 
-				&#photo-1 {
-					// background: url('/img/1.png') no-repeat top left;
-					@include sprite($about1);
-					background-size: cover;
-				}
-				&#photo-2 {
-					// background: url('/img/2.png') no-repeat top left;
-					@include sprite($about2);
-					background-size: cover;
-				}
-				&#photo-3 {
-					// background: url('/img/3.png') no-repeat top left;
-					@include sprite($about3);
-					background-size: cover;
-				}
-				&#photo-4 {
-					// background: url('/img/4.png') no-repeat top left;
-					@include sprite($about4);
-					background-size: cover;
-				}
-				&#photo-5 {
-					// background: url('/img/5.png') no-repeat top left;
-					@include sprite($about5);
-					background-size: cover;
-				}
+				&#photo-1 { @include sprite($about1-sm); }
+				&#photo-2 { @include sprite($about2-sm); }
+				&#photo-3 { @include sprite($about3-sm); }
+				&#photo-4 { @include sprite($about4-sm); }
+				&#photo-5 { @include sprite($about5-sm); }
 			}
 		}
 	}
@@ -218,6 +198,12 @@
 			ul {
 				li {
 					width: 300px;
+
+					&#photo-1 { @include sprite($about1); }
+					&#photo-2 { @include sprite($about2); }
+					&#photo-3 { @include sprite($about3); }
+					&#photo-4 { @include sprite($about4); }
+					&#photo-5 { @include sprite($about5); }
 				}
 			}
 		}
