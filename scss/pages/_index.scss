@@ -181,7 +181,7 @@
 
 	@media (min-width: 800px) {
 		.img-carousel, .photo-content {
-			width: 605px;
+			width: 766px;
 		}
 
 		.photo-content {
@@ -189,26 +189,34 @@
 		}
 
 		.img-carousel {
-			height: 320px;
-
 			ul {
-				li {
-					width: 300px;
-
-					&#photo-1 { @include sprite($about1); }
-					&#photo-2 { @include sprite($about2); }
-					&#photo-3 { @include sprite($about3); }
-					&#photo-4 { @include sprite($about4); }
-					&#photo-5 { @include sprite($about5); }
-				}
+				overflow: hidden;
+				white-space: normal;
+				-webkit-overflow-scrolling: auto;
 			}
 		}
+
+		// .img-carousel {
+		// 	height: 320px;
+
+		// 	ul {
+		// 		li {
+		// 			width: 300px;
+
+		// 			&#photo-1 { @include sprite($about1); }
+		// 			&#photo-2 { @include sprite($about2); }
+		// 			&#photo-3 { @include sprite($about3); }
+		// 			&#photo-4 { @include sprite($about4); }
+		// 			&#photo-5 { @include sprite($about5); }
+		// 		}
+		// 	}
+		// }
 	}
 
 	@media (min-width: 1024px) {
-		.img-carousel, .photo-content {
-			width: 908px;
-		}
+		// .img-carousel, .photo-content {
+		// 	width: 908px;
+		// }
 
 		.action-large {
 			display: inline;
@@ -220,22 +228,22 @@
 	}
 
 	@media (min-width: 1440px) {
-		.img-carousel, .photo-content {
-			width: 1212px;
-		}
+		// .img-carousel, .photo-content {
+		// 	width: 1212px;
+		// }
 	}
 
 	@media (min-width: 1600px) {
-		.img-carousel, .photo-content {
-			width: 1516px;
-		}
+		// .img-carousel, .photo-content {
+		// 	width: 1516px;
+		// }
 
-		.img-carousel {
-			height: 300px;
+		// .img-carousel {
+		// 	height: 300px;
 
-			ul {
-				overflow: visible;
-			}
-		}
+		// 	ul {
+		// 		overflow: visible;
+		// 	}
+		// }
 	}
 }
