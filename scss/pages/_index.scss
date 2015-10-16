@@ -1,14 +1,40 @@
-#home {
+#home,
+#description,
+#hotels {
 	@include gradient($color-primary-1, $color-primary-2);
 }
 
-#engagement {
+#engagement,
+#directions,
+#registry {
 	@include gradient($color-primary-2, $color-primary-1);
 }
 
-#directions {
-	@include gradient($color-primary-1, $color-primary-2);
+#description {
+	#left-wrapper { 
+		height: 300px;
+		background: url('http://www.laifi.com/usuario/30/laifi/11820239_30_29511207_9029.jpg') top right no-repeat;
 
+		p {
+			margin-right: 300px;
+			padding-right: 10px;
+			text-align: justify;
+		}
+	}
+
+	#right-wrapper {
+		height: 300px;
+		background: url('http://static.comicvine.com/uploads/scale_small/13/135098/3468811-chb01p046.jpg') top left no-repeat;
+
+		p {
+			margin-left: 300px;
+			padding-left: 10px;
+			text-align: justify;
+		}
+	}
+}
+
+#directions {
 	#directions-wrapper {
 
 		#directions-map {
@@ -32,8 +58,6 @@
 }
 
 #hotels {
-	@include gradient($color-primary-2, $color-primary-1);
-
 	#hotels-wrapper {
 		padding-bottom: 1.5em;
 
@@ -58,8 +82,6 @@
 }
 
 #registry {
-	background-color: $color-primary-1;
-
 	#registry-wrapper {
 		margin-top: 50px;
 	}
