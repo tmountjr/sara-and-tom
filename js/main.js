@@ -14,7 +14,7 @@ var tool = tool || {};
 			$.scrollTo($(this).attr('href'), 750, 'swing');
 		});
 
-		$(".about-nav-top").click(function(e) {
+		$(".engagement-nav-top").click(function(e) {
 			e.preventDefault();
 			$.scrollTo($(this).attr('href'), 750, 'swing');
 		});

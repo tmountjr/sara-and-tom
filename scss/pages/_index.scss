@@ -2,7 +2,7 @@
 	@include gradient($color-primary-1, $color-primary-2);
 }
 
-#about {
+#engagement {
 	@include gradient($color-primary-2, $color-primary-1);
 }
 
@@ -89,7 +89,7 @@
 		height: 100%;
 		position: relative;
 
-		.about-nav-top {
+		.engagement-nav-top {
 			display: none;
 		}
 	}
@@ -149,11 +149,11 @@
 
 				text-indent: -9999px;
 
-				&#photo-1 { @include sprite($about1-sm); }
-				&#photo-2 { @include sprite($about2-sm); }
-				&#photo-3 { @include sprite($about3-sm); }
-				&#photo-4 { @include sprite($about4-sm); }
-				&#photo-5 { @include sprite($about5-sm); }
+				&#photo-1 { @include sprite($engagement1-sm); }
+				&#photo-2 { @include sprite($engagement2-sm); }
+				&#photo-3 { @include sprite($engagement3-sm); }
+				&#photo-4 { @include sprite($engagement4-sm); }
+				&#photo-5 { @include sprite($engagement5-sm); }
 			}
 		}
 	}
@@ -203,11 +203,11 @@
 		// 		li {
 		// 			width: 300px;
 
-		// 			&#photo-1 { @include sprite($about1); }
-		// 			&#photo-2 { @include sprite($about2); }
-		// 			&#photo-3 { @include sprite($about3); }
-		// 			&#photo-4 { @include sprite($about4); }
-		// 			&#photo-5 { @include sprite($about5); }
+		// 			&#photo-1 { @include sprite($engagement1); }
+		// 			&#photo-2 { @include sprite($engagement2); }
+		// 			&#photo-3 { @include sprite($engagement3); }
+		// 			&#photo-4 { @include sprite($engagement4); }
+		// 			&#photo-5 { @include sprite($engagement5); }
 		// 		}
 		// 	}
 		// }
