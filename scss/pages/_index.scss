@@ -11,25 +11,41 @@
 }
 
 #description {
-	#left-wrapper { 
-		height: 300px;
-		background: url('http://www.laifi.com/usuario/30/laifi/11820239_30_29511207_9029.jpg') top right no-repeat;
 
-		p {
-			margin-right: 300px;
-			padding-right: 10px;
-			text-align: justify;
-		}
+	p, h4 {
+		text-align: justify;
 	}
 
-	#right-wrapper {
-		height: 300px;
-		background: url('http://static.comicvine.com/uploads/scale_small/13/135098/3468811-chb01p046.jpg') top left no-repeat;
+	@media (min-width: 768px) {
+		#left-wrapper,
+		#right-wrapper {
+			min-height: 300px;
+		}
 
-		p {
-			margin-left: 300px;
-			padding-left: 10px;
-			text-align: justify;
+		#left-wrapper {
+			background: url('http://www.laifi.com/usuario/30/laifi/11820239_30_29511207_9029.jpg') top right no-repeat;
+
+			p, h4 {
+				margin-right: 300px;
+				padding-right: 10px;
+			}
+
+			h4 {
+				text-align: right;
+			}
+		}
+
+		#right-wrapper {
+			background: url('http://static.comicvine.com/uploads/scale_small/13/135098/3468811-chb01p046.jpg') top left no-repeat;
+
+			p, h4 {
+				margin-left: 300px;
+				padding-left: 10px;
+			}
+
+			h4 {
+				text-align: left;
+			}
 		}
 	}
 }
