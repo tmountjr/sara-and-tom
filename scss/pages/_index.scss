@@ -12,22 +12,28 @@
 
 #description {
 
-	p, h4 {
+	p {
 		text-align: justify;
 	}
 
+	img {
+		display: none;
+	}
+
+	#description-right,
+	#description-left {
+		margin-bottom: 15px;
+	}
+
 	@media (min-width: 768px) {
-		#left-wrapper,
-		#right-wrapper {
-			min-height: 300px;
+		img {
+			display: inline-block;
 		}
 
-		#left-wrapper {
-			background: url('http://www.laifi.com/usuario/30/laifi/11820239_30_29511207_9029.jpg') top right no-repeat;
-
-			p, h4 {
-				margin-right: 300px;
-				padding-right: 10px;
+		#description-right {
+			img {
+				float: right;
+				padding-left: 10px;
 			}
 
 			h4 {
@@ -35,12 +41,10 @@
 			}
 		}
 
-		#right-wrapper {
-			background: url('http://static.comicvine.com/uploads/scale_small/13/135098/3468811-chb01p046.jpg') top left no-repeat;
-
-			p, h4 {
-				margin-left: 300px;
-				padding-left: 10px;
+		#description-left {
+			img {
+				float: left;
+				padding-right: 10px;
 			}
 
 			h4 {
