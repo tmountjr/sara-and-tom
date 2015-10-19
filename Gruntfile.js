@@ -57,6 +57,15 @@ module.exports = function(grunt) {
 			html: ['<%= config.path.copyDest %>/**/*.html']
 		},
 
+		swig: {
+			compiled: {
+				dest: 'compiled-index',
+				src: ['swig-templates/*.swig'],
+				generateSitemap: false,
+				generateRobotstxt: false
+			}
+		},
+
 		copy: {
 			css: {
 				files: [{
