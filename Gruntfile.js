@@ -51,19 +51,17 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			swigDest: ['<%= config.path.swigDest %>'],
-			// domain: ['<%= config.path.domainDest %>'],
-			// subdomain: ['<%= config.path.subdomainDest %>'],
+			swigDest: ['<%= config.path.swigDest %>/*.html'],
 
 			domainCss: ['<%= config.path.domainDest %>/css/**'],
 			domainJs: ['<%= config.path.domainDest %>/js/**'],
 			domainImg: ['<%= config.path.domainDest %>/img/**'],
-			domainHtml: ['<%= config.path.domainDest %>/index.html'],
+			domainIndex: ['<%= config.path.domainDest %>/index.html'],
 
 			subdomainCss: ['<%= config.path.subdomainDest %>/css/**'],
 			subdomainJs: ['<%= config.path.subdomainDest %>/js/**'],
 			subdomainImg: ['<%= config.path.subdomainDest %>/img/**'],
-			subdomainHtml: ['<%= config.path.subdomainDest %>/index.html'],
+			subdomainIndex: ['<%= config.path.subdomainDest %>/index.html'],
 		},
 
 		swig: {
@@ -179,7 +177,7 @@ module.exports = function(grunt) {
 			},
 			swig: {
 				files: '<%= config.path.swigTemplates %>/**/*',
-				tasks: ['clean:domainHtml', 'clean:subdomainHtml', 'copy:domainHtml', 'copy:subdomainHtml']
+				tasks: ['clean:swigDest', 'clean:domainIndex', 'clean:subdomainIndex', 'swig', 'copy:domainIndex', 'copy:subdomainIndex']
 			}
 		}
 
