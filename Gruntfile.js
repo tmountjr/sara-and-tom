@@ -13,10 +13,10 @@ module.exports = function(grunt) {
 				img: 'img',
 				imgSrc: 'img-src',
 				spriteSrc: 'sprite-src',
-				copyDest: 'tmountjr.github.io',
-				destCss: '<%= config.path.copyDest %>/css',
-				destJs: '<%= config.path.copyDest %>/js',
-				destImg: '<%= config.path.copyDest %>/img',
+				domainDest: 'domain',
+				subdomainDest: 'subdomain',
+				swigTemplates: 'swig-templates',
+				swigDest: 'compiled-index',
 			}
 		},
 
@@ -51,50 +51,110 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			css: ['<%= config.path.destCss %>'],
-			js: ['<%= config.path.destJs %>'],
-			img: ['<%= config.path.destImg %>'],
-			html: ['<%= config.path.copyDest %>/**/*.html']
+			swigDest: ['<%= config.path.swigDest %>'],
+			// domain: ['<%= config.path.domainDest %>'],
+			// subdomain: ['<%= config.path.subdomainDest %>'],
+
+			domainCss: ['<%= config.path.domainDest %>/css/**'],
+			domainJs: ['<%= config.path.domainDest %>/js/**'],
+			domainImg: ['<%= config.path.domainDest %>/img/**'],
+			domainHtml: ['<%= config.path.domainDest %>/index.html'],
+
+			subdomainCss: ['<%= config.path.subdomainDest %>/css/**'],
+			subdomainJs: ['<%= config.path.subdomainDest %>/js/**'],
+			subdomainImg: ['<%= config.path.subdomainDest %>/img/**'],
+			subdomainHtml: ['<%= config.path.subdomainDest %>/index.html'],
 		},
 
 		swig: {
 			compiled: {
-				dest: 'compiled-index',
-				src: ['swig-templates/*.swig'],
+				dest: '<%= config.path.swigDest %>',
+				src: ['<%= config.path.swigTemplates %>/*.swig'],
 				generateSitemap: false,
 				generateRobotstxt: false
 			}
 		},
 
 		copy: {
-			css: {
-				files: [{
-					expand: true, 
-					src: ['<%= config.path.css %>/**'], 
-					dest: '<%= config.path.copyDest %>'
-				}]
-			},
-			img: {
+			// copy domain css
+			domainCss: {
 				files: [{
 					expand: true,
-					src: ['<%= config.path.img %>/**'],
-					dest: '<%= config.path.copyDest %>'
+					src: '<%= config.path.css %>/**',
+					dest: '<%= config.path.domainDest %>'
 				}]
 			},
-			js: {
+
+			// copy domain img
+			domainImg: {
 				files: [{
 					expand: true,
-					src: ['<%= config.path.js %>/**'],
-					dest: '<%= config.path.copyDest %>'
+					src: '<%= config.path.img %>/**',
+					dest: '<%= config.path.domainDest %>'
 				}]
 			},
-			html: {
+
+			// copy domain js
+			domainJs: {
 				files: [{
-					expand: true, 
-					src: ['*.html'], 
-					dest: '<%= config.path.copyDest %>'
+					expand: true,
+					src: '<%= config.path.js %>/**/*',
+					dest: '<%= config.path.domainDest %>'
 				}]
-			}
+			},
+
+			// copy and rename the domain index file
+			domainIndex: {
+				files: [{
+					expand: true,
+					cwd: '<%= config.path.swigDest %>/',
+					src: 'domain.html',
+					dest: '<%= config.path.domainDest %>/',
+					rename: function(dest, src) {
+						return dest + src.replace('domain.html', 'index.html');
+					}
+				}]
+			},
+
+			// copy subdomain css
+			subdomainCss: {
+				files: [{
+					expand: true,
+					src: '<%= config.path.css %>/**',
+					dest: '<%= config.path.subdomainDest %>'
+				}]
+			},
+
+			// copy subdomain img
+			subdomainImg: {
+				files: [{
+					expand: true,
+					src: '<%= config.path.img %>/**',
+					dest: '<%= config.path.subdomainDest %>'
+				}]
+			},
+
+			// copy subdomain js
+			subdomainJs: {
+				files: [{
+					expand: true,
+					src: '<%= config.path.js %>/**/*',
+					dest: '<%= config.path.subdomainDest %>'
+				}]
+			},
+
+			// copy and rename the subdomain index file
+			subdomainIndex: {
+				files: [{
+					expand: true,
+					cwd: '<%= config.path.swigDest %>/',
+					src: 'subdomain.html',
+					dest: '<%= config.path.subdomainDest %>/',
+					rename: function(dest, src) {
+						return dest + src.replace('subdomain.html', 'index.html');
+					}
+				}]
+			},
 		},
 
 		watch: {
@@ -103,33 +163,49 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: '<%= config.path.scss %>/**/*.scss',
-				tasks: ['sass', 'clean:css', 'copy:css']
+				tasks: ['sass', 'clean:domainCss', 'clean:subdomainCss', 'copy:domainCss', 'copy:subdomainCss']
 			},
-			spite: {
+			sprites: {
 				files: '<%= config.path.spriteSrc %>/*.*',
-				tasks: ['sprite', 'clean:css', 'clean:img', 'copy:css', 'copy:img']
+				tasks: ['sprite', 'clean:domainCss', 'clean:subdomainCss', 'clean:domainImg', 'clean:subdomainImg', 'copy:domainCss', 'copy:subdomainCss', 'copy:domainImg', 'copy:subdomainImg']
 			},
 			images: {
-				files: '<%= config.path.imgSrc %>',
-				tasks: ['newer:imagemin', 'clean:img', 'copy:img']
+				files: '<%= config.path.imgSrc %>/**',
+				tasks: ['newer:imagemin', 'clean:domainImg', 'clean:subdomainImg', 'copy:domainImg', 'copy:subdomainImg']
 			},
 			js: {
 				files: '<%= config.path.js %>/**/*.js',
-				tasks: ['clean:js', 'copy:js']
+				tasks: ['clean:domainJs', 'clean:subdomainJs', 'copy:domainJs', 'copy:subdomainJs']
 			},
-			html: {
-				files: ['index.html'],
-				tasks: ['clean:html', 'copy:html']
+			swig: {
+				files: '<%= config.path.swigTemplates %>/**/*',
+				tasks: ['clean:domainHtml', 'clean:subdomainHtml', 'copy:domainHtml', 'copy:subdomainHtml']
 			}
 		}
 
 	});
+
+	// internal copy tasks
+	grunt.registerTask('fullDomain', [
+		'domainCss',
+		'domainImg',
+		'domainJs',
+		'domainIndex',
+	]);
+
+	grunt.registerTask('fullSubdomain', [
+		'subdomainCss',
+		'subdomainImg',
+		'subdomainJs',
+		'subdomainIndex',
+	]);
 
 	grunt.registerTask('build', [
 		'sprite',
 		'sass',
 		'imagemin',
 		'clean',
+		'swig',
 		'copy'
 	]);
 
