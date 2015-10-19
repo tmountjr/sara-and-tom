@@ -17,6 +17,7 @@
 	}
 
 	img {
+		@extend %image-border;
 		display: none;
 	}
 
@@ -33,7 +34,7 @@
 		#description-right {
 			img {
 				float: right;
-				padding-left: 10px;
+				margin-left: 10px;
 			}
 
 			h4 {
@@ -44,7 +45,7 @@
 		#description-left {
 			img {
 				float: left;
-				padding-right: 10px;
+				margin-right: 10px;
 			}
 
 			h4 {
@@ -82,6 +83,8 @@
 		padding-bottom: 1.5em;
 
 		img {
+			@extend %image-border;
+			
 			margin: 0 auto;
 			width: 75%;
 
