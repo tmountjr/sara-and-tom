@@ -16,7 +16,7 @@
 %h1 {
 	@extend %GreatVibes;
 	font-size: 3em;
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		font-size: 5em;
 	}
 }
@@ -24,7 +24,7 @@
 %h2 {
 	font-weight: bold;
 	font-size: 1.75em;
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		font-size: 2em;
 	}
 }
@@ -33,7 +33,7 @@
 	@extend %JuliusSansOne;
 	font-weight: bold;
 	font-size: 3em;
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		font-size: 4em;
 	}
 }
@@ -42,7 +42,7 @@
 	@extend %PoiretOne;
 	font-style: italic;
 	font-size: 1.25em;
-	@media (min-width: 1024px) {
+	@media (min-width: 1280px) {
 		font-size: 2em;
 	}
 }
